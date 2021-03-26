@@ -1,0 +1,158 @@
+html, body{
+    height: 100%;
+    font-family: 'Nunito Sans', sans-serif;
+    background-color: #f0f2f6;
+}
+
+#info{
+    background: linear-gradient(to right, #073b3a 0%, #0b6e4f 100%)!important;
+    color: #fff;
+    padding: .2rem 2rem;
+}
+.navbar{
+    background: linear-gradient(to right, #0ba360 0%, #3cba92 100%)!important;
+}
+#home{
+    height: calc(100vh - 112px);
+    position: relative;
+    display: flex;
+    background: #000;
+    margin-bottom: 1rem;
+}
+#home > .background{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    user-select: none;
+    object-fit: cover;
+    opacity: .7;
+}
+#home .keterangan{
+    color: #fff;
+    background: linear-gradient(to right, #000000a9, #00000000)!important;
+    z-index: 1;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+.navbar-nav .dropdown-menu{
+    border-radius: 0;
+    border: none;
+    padding: 1.1rem 0;
+}
+
+footer{
+    background: linear-gradient(to right, #073b3a 0%, #0b6e4f 100%)!important;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+}
+footer a{
+    color: #fff;
+    text-decoration: none;
+}
+
+footer a:hover, footer a:focus{
+    color: #3cba92;
+}
+
+.andalan .row > *{
+    text-align: center;
+}
+
+.andalan a{
+    text-decoration: none;
+    color: #0b6e4f;
+    font-size: 13px;
+    text-align: center;
+    display: inline-block;
+}
+
+.no-radius{
+    border-radius: 0;
+    /* border: none; */
+}
+
+.artikel{
+    border-radius: 7px;
+    overflow: hidden;
+}
+
+.card-horizontal {
+    display: flex;
+    flex: 1 1 auto;
+}
+
+.artikel .card-horizontal img{
+    width: 270px;
+    height: auto;
+    object-fit: cover;
+}
+
+.artikel .judul{
+    text-decoration: none !important;
+    color: #0ba360;
+    display: block;
+    margin-bottom: 0;
+}
+
+.artikel .judul:hover, .artikel .judul:focus{
+    color: #0b6e4f;
+}
+
+.artikel .card-header, .artikel .card-footer{
+    background-color: #fdfdfd;
+    border-color: #eeeeee;
+}
+
+.artikel .ket{
+    color: #797979;
+    font-size: 11px;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+.single_bottom_rightbar{
+    margin-bottom: 1rem;
+    background: #fff;
+    border: 1px solid #dfdfdf;
+    box-shadow: 0 .125rem .25rem #00000013 !important;
+}
+
+.single_bottom_rightbar h2{
+    background-color: #0ba360;
+    color: #fff;
+    padding: 10px 20px;
+    font-weight: bold;
+    font-size: 15px;
+}
+.single_bottom_rightbar h2 > a{
+    color: #fff;
+    text-decoration: none;
+}
+
+
+@media (min-width: 992px){
+    .navbar-expand-lg .navbar-nav .dropdown-menu {
+        position: absolute;
+        margin-top: 20px;
+    }
+}
+@media (max-width: 991.999px){
+
+    .artikel .card-horizontal{
+        display: block;
+    }
+    .artikel .card-horizontal img{
+        width: 100%;
+    }
+    #home .keterangan{
+        text-align: center;
+        padding: 2rem;
+    }
+}
