@@ -1,5 +1,4 @@
 <!-- widget Kategori-->
-
 <div class="single_bottom_rightbar">
 	<h2><i class="fas fa-list me-1"></i> Kategori</h2>
 	<div class="m-2">

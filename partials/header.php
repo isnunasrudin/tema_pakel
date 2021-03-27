@@ -1,14 +1,17 @@
 <?php foreach($teks_berjalan as $teks) : ?>
     <div id="info">
-        <div class="container">
-            <span class="badge bg-danger me-2">INFO!</span>
-            <?= $teks['teks']?>
-            <?php if ($teks['tautan']): ?>
-                <a href="<?= $teks['tautan'] ?>" rel="noopener noreferrer" title="Baca Selengkapnya"><?= $teks['judul_tautan']?></a>
-            <?php endif; ?>
+        <div class="container d-flex">
+            <span class="badge bg-danger my-auto me-2">INFO!</span>
+            <marquee onMouseOver="this.stop()" onMouseOut="this.start()">
+                <?= $teks['teks']?>
+                <?php if ($teks['tautan']): ?>
+                    <a href="<?= $teks['tautan'] ?>" rel="noopener noreferrer" title="Baca Selengkapnya"><?= $teks['judul_tautan']?></a>
+                <?php endif; ?>
+            </marquee>
         </div>
     </div>
 <?php endforeach; ?>
+
 <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container">
         <a class="navbar-brand" href="<?= base_url() ?>">

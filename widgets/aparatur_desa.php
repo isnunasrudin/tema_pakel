@@ -1,5 +1,4 @@
 <!-- widget Aparatur Desa -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
 <style>
 	#aparatur .splide__slide{
 		position: relative;
@@ -32,7 +31,6 @@
 		font-size: 13px;
 	}
 </style>
-<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
 <div class="single_bottom_rightbar" id="aparatur">
 	<h2 class="box-title"><i class="fas fa-user me-1"></i> Aparatur <?= ucwords($this->setting->sebutan_desa)?></h2>
 	<div class="box-body m-2">
@@ -48,15 +46,8 @@
 						</div>
 					</li>
 				<?php endforeach; ?>
-					<!-- <li class="splide__slide">Slide 02</li>
-					<li class="splide__slide">Slide 03</li> -->
 				</ul>
 			</div>
 		</div>
 	</div>
 </div>
-<script>
-	new Splide( '.splide', {
-		type   : 'loop',
-	}).mount();
-</script>

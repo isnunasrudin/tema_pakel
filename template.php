@@ -57,15 +57,21 @@
         <div class="row">
             <div class="col-lg-9">
                 <div class="d-block bg-success p-1 text-white fw-bold h4 text-center mb-2">Artikel Terkini</div>
+                <?php if(preg_match(
+                    "/^". preg_quote(base_url(), '/') ."(index.php\/)?(index\/1)?$/",
+                    current_url()
+                )) array_unshift($artikel, $headline) ?>
                 <?php foreach($artikel as $data) : ?>
                 <div class="col mb-3">
                     <div class="card shadow-sm artikel">
                         <div class="card-horizontal">
-                            <?php if (is_file(LOKASI_FOTO_ARTIKEL."kecil_".$data['gambar'])): ?>
-                            <img src="<?= AmbilFotoArtikel($data['gambar'],'sedang') ?>" alt="...">
-                            <?php else: ?>
-                            <img src="<?= base_url("$this->theme_folder/$this->theme/images/noimage.png") ?>" alt="...">
-                            <?php endif; ?>
+                            <div class="img-artikel">
+                                <?php if (is_file(LOKASI_FOTO_ARTIKEL."kecil_".$data['gambar'])): ?>
+                                <img src="<?= AmbilFotoArtikel($data['gambar'],'sedang') ?>" alt="...">
+                                <?php else: ?>
+                                <img src="<?= base_url("$this->theme_folder/$this->theme/images/noimage.png") ?>" alt="...">
+                                <?php endif; ?>
+                            </div>
                             <div class="d-block w-100">
                                 <div class="card-header">
                                     <a class="h5 judul" href="<?= site_url('artikel/'.buat_slug($data))?>"><?= $data["judul"] ?></a>
@@ -74,7 +80,7 @@
                                         <i class="far fa-user"></i> <span><?= $data['owner'] ?></span>
                                     </div>
                                 </div>
-                                <div class="card-body text-justify mb-3">
+                                <div class="card-body text-justify mb-3 isi-artikel">
                                     <p class="card-text"><?= potong_teks($data['isi'], 200) ?>...</p>
                                 </div>
                                 <div class="small card-footer ket text-right d-flex text-secondary">
