@@ -12,7 +12,7 @@
         <img src="<?= base_url("$this->theme_folder/$this->theme/images/pemandangan.jpg") ?>" alt="" class="background">
         <div class="keterangan">
             <div class="my-auto w-100">
-                <div class="container">
+                <div class="container mt-5 pt-5">
                     <p class="h5">Selamat Datang di Website Resmi</p>
                     <img src="<?= gambar_desa('desa_pakel.svg') ?>" alt="Tulisan Desa Pakel" height="95"class="my-3" style="max-width: 100%;">
                     <p class="h3">Kec. Watulimo Kab. Trenggalek</p>
@@ -105,13 +105,13 @@
                     <?php if ($artikel AND $paging->num_rows > $paging->per_page): ?>
                     <nav aria-label="Page navigation example" class="mx-auto">
                         <ul class="pagination">
-                            <li class="page-item me-2 <?= $paging->page == $paging->start_link ? 'disabled' : '' ?>"><a class="page-link" href="#">Previous</a></li>
+                            <li class="page-item me-2 <?= $paging->page == $paging->start_link ? 'disabled' : '' ?>"><a class="page-link" href="<?= site_url($paging_page."/$paging->prev" . $paging->suffix) ?>"><?= htmlentities("<") ?></a></li>
                             <?php foreach ($pages as $i): ?>
                             <li class="page-item <?= ($p == $i) ? 'active' : "" ?>">
                                 <a class="page-link" href="<?= site_url($paging_page."/$i" . $paging->suffix) ?>" title="Halaman <?= $i ?>"><?= $i ?></a>
                             </li>
                             <?php endforeach; ?>
-                            <li class="page-item ms-2 <?= $paging->page == $paging->end_link ? 'disabled' : '' ?>"><a class="page-link" href="#">Next</a></li>
+                            <li class="page-item ms-2 <?= $paging->page == $paging->end_link ? 'disabled' : '' ?>"><a class="page-link" href="<?= site_url($paging_page."/$paging->next" . $paging->suffix) ?>"><?= htmlentities(">") ?></a></li>
                         </ul>
                     </nav>
                 <?php endif; ?>

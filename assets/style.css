@@ -1,7 +1,20 @@
+:root{
+    --lo-success: #15ac6a;
+    --bg-gradient: linear-gradient(to right, #0ba360 0%, #3cba92 100%)!important;
+}
+
+.bg-success{
+    background: var(--bg-gradient)
+}
+
 html, body{
     height: 100%;
     font-family: 'Nunito Sans', sans-serif;
     background-color: #f0f2f6;
+}
+
+body{
+    padding-top: 112px;
 }
 
 #info{
@@ -10,10 +23,12 @@ html, body{
     padding: .2rem 2rem;
 }
 .navbar{
-    background: linear-gradient(to right, #0ba360 0%, #3cba92 100%)!important;
+    background: var(--bg-gradient);
+    box-shadow: 0 .125rem .25rem #00000013 !important;
 }
 #home{
-    height: calc(100vh - 112px);
+    margin-top: -112px;
+    height: 100vh;
     position: relative;
     display: flex;
     background: #000;
@@ -30,6 +45,7 @@ html, body{
     opacity: .7;
 }
 #home .keterangan{
+    padding-top: 112px !important;
     color: #fff;
     background: linear-gradient(to right, #000000a9, #00000000)!important;
     z-index: 1;
@@ -42,6 +58,7 @@ html, body{
     border-radius: 0;
     border: none;
     padding: 1.1rem 0;
+    z-index: -1;
 }
 
 footer{
@@ -143,7 +160,7 @@ footer a:hover, footer a:focus{
 }
 
 .single_bottom_rightbar h2{
-    background-color: #0ba360;
+    background: var(--bg-gradient);
     color: #fff;
     padding: 10px 20px;
     font-weight: bold;
@@ -167,10 +184,50 @@ footer a:hover, footer a:focus{
     margin-bottom: 3px;
 }
 
+#header{
+    position: fixed;
+    z-index: 9999;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+.navbar img{
+    transition: .2s ease all;
+}
+
+.navbar.nav-scrolled img{
+    height: 32px;
+}
+
+#info{
+    transition: .2s ease all;
+    height: 31px;
+}
+
+#info.hidden{
+    box-sizing: border-box;
+    padding: 0;
+    height: 0;
+    overflow: hidden;
+}
+
 @media (min-width: 992px){
     .navbar-expand-lg .navbar-nav .dropdown-menu {
         position: absolute;
         margin-top: 20px;
+        box-shadow: 0 .125rem .25rem #00000013 !important;
+    }
+    .navbar-expand-lg.navbar.nav-scrolled .navbar-nav .dropdown-menu{
+        margin-top: 9px;
+    }
+    .nav-item.dropdown .dropdown-menu{
+        transition: all 0s;
+        transition-delay: 2s;
+    }
+    .nav-item.dropdown:hover .dropdown-menu{
+        display: block;
+        transition-delay: 10s;
     }
 }
 @media (max-width: 991.999px){
@@ -187,6 +244,15 @@ footer a:hover, footer a:focus{
     }
     #home .keterangan{
         text-align: center;
-        padding: 2rem;
+        padding: 1rem;
+    }
+    #home{
+        height: 100vh;
+    }
+    #home img{
+        margin: 0 !important;
+    }
+    #home .h5{
+        margin: 0;
     }
 }

@@ -33,6 +33,21 @@
                             </a>
                         <?php endif;?>
                         <?= trim($single_artikel["isi"]) ?>
+
+
+                        <!-- BAGIAN FOTO BANYAK -->
+                        <div class="row justify-content-center">
+                            <?php if ($single_artikel['gambar1']!='' and is_file(LOKASI_FOTO_ARTIKEL."sedang_".$single_artikel['gambar1'])): ?>
+                                <div class="col-auto"><img width="270px" class="img-fluid img-thumbnail" src="<?= AmbilFotoArtikel($single_artikel['gambar1'],'sedang')?>"/></div>
+                            <?php endif; ?>
+                            <?php if ($single_artikel['gambar2']!='' and is_file(LOKASI_FOTO_ARTIKEL."sedang_".$single_artikel['gambar2'])): ?>
+                                <div class="col-auto"><img width="270px" class="img-fluid img-thumbnail" src="<?= AmbilFotoArtikel($single_artikel['gambar2'],'sedang')?>"/></div>
+                            <?php endif; ?>
+                            <?php if ($single_artikel['gambar3']!='' and is_file(LOKASI_FOTO_ARTIKEL."sedang_".$single_artikel['gambar3'])): ?>
+                                <div class="col-auto"><img width="270px" class="img-fluid img-thumbnail" src="<?= AmbilFotoArtikel($single_artikel['gambar3'],'sedang')?>"/></div>
+                            <?php endif; ?>
+                        </div>
+
                         
                         <!-- BAGIAN SHARE -->
                         <div class="d-block text-muted fw-bold">Bagikan ke :</div>
